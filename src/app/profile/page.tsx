@@ -62,10 +62,6 @@ const ProfilePage = () => {
             <p className="font-medium">mfu.uae@gmail.com</p>
           </div>
           <div>
-            <span className="text-sm text-muted-foreground">Location</span>
-            <p className="font-medium">Al Nahda, Dubai</p>
-          </div>
-          <div>
             <span className="text-sm text-muted-foreground">Experience</span>
             <p className="font-medium">25+ Years</p>
           </div>
