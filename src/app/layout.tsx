@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
+import { MobileNav } from "@/components/MobileNav";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -117,6 +118,7 @@ export default function RootLayout({
                   </a>
                 </Button>
                 <ThemeToggle />
+                <MobileNav />
               </div>
             </div>
           </header>
