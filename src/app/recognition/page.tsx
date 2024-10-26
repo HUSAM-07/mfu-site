@@ -43,7 +43,7 @@ export default function RecognitionPage() {
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h1 className="text-4xl font-bold mb-4">Our Recognitions</h1>
+        <h1 className="text-4xl font-bold mb-4">Recognitions</h1>
         <p className="text-xl text-muted-foreground">
           Celebrating excellence in architecture and sustainable design
         </p>

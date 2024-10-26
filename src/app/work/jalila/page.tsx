@@ -11,13 +11,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 
 const project = {
-  title: "Modern Lakeside Retreat",
-  description: "Nestled on the picturesque shores of Lake Como, this stunning contemporary home is a masterpiece of modern architecture and interior design. The project seamlessly blends indoor and outdoor living spaces, maximizing the breathtaking views while providing ultimate comfort and luxury to its residents.",
+  title: "Jalila Children's Specialty Hospital",
+  description: "Comprehensive MEP solutions for a leading children's hospital, incorporating cutting-edge medical infrastructure and energy-efficient systems.",
   client: "Private Residence",
   date: "2023",
   location: "Lake Como, Italy",
   category: "Residential",
-  mainImage: "/placeholder.svg?height=600&width=1200",
+  mainImage: "/projects-assets/jalila-hospital.jpg",
   gallery: [
     "/placeholder.svg?height=400&width=600",
     "/placeholder.svg?height=400&width=600",
@@ -54,14 +54,14 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-8 md:py-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">{project.title}</h1>
-        <div className="mb-8 flex flex-wrap gap-2">
+        <h1 className="mb-4 text-3xl md:text-4xl lg:text-5xl font-bold">{project.title}</h1>
+        <div className="mb-6 md:mb-8 flex flex-wrap gap-2">
           <Badge variant="secondary">{project.category}</Badge>
           <Badge variant="secondary">{project.date}</Badge>
           <Badge variant="secondary">{project.location}</Badge>
@@ -83,44 +83,44 @@ export default function ProjectDetail() {
         </AspectRatio>
       </motion.div>
 
-      <div className="mt-12 grid gap-12 md:grid-cols-3">
+      <div className="mt-8 md:mt-12 grid gap-8 md:gap-12 md:grid-cols-3">
         <motion.div
           className="md:col-span-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h2 className="mb-4 text-2xl font-semibold">Project Overview</h2>
-          <p className="text-lg text-muted-foreground">{project.description}</p>
+          <h2 className="mb-4 text-xl md:text-2xl font-semibold">Project Overview</h2>
+          <p className="text-base md:text-lg text-muted-foreground">{project.description}</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <h2 className="mb-4 text-2xl font-semibold">Project Details</h2>
-          <dl className="space-y-2">
+          <h2 className="mb-4 text-xl md:text-2xl font-semibold">Project Details</h2>
+          <dl className="space-y-2 text-sm md:text-base">
             <div>
-              <dt className="font-semibold">Client</dt>
+              <dt className="font-medium">Client:</dt>
               <dd>{project.client}</dd>
             </div>
             <div>
-              <dt className="font-semibold">Date</dt>
+              <dt className="font-medium">Date:</dt>
               <dd>{project.date}</dd>
             </div>
             <div>
-              <dt className="font-semibold">Location</dt>
+              <dt className="font-medium">Location:</dt>
               <dd>{project.location}</dd>
             </div>
             <div>
-              <dt className="font-semibold">Category</dt>
+              <dt className="font-medium">Category:</dt>
               <dd>{project.category}</dd>
             </div>
           </dl>
         </motion.div>
       </div>
 
-      <Separator className="my-12" />
+      <Separator className="my-8 md:my-12" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -156,7 +156,7 @@ export default function ProjectDetail() {
         </div>
       </motion.div>
 
-      <Separator className="my-12" />
+      <Separator className="my-8 md:my-12" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -176,7 +176,7 @@ export default function ProjectDetail() {
         </ul>
       </motion.div>
 
-      <Separator className="my-12" />
+      <Separator className="my-8 md:my-12" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -193,7 +193,7 @@ export default function ProjectDetail() {
         </Card>
       </motion.div>
 
-      <Separator className="my-12" />
+      <Separator className="my-8 md:my-12" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -220,7 +220,7 @@ export default function ProjectDetail() {
         </div>
       </motion.div>
 
-      <Separator className="my-12" />
+      <Separator className="my-8 md:my-12" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
