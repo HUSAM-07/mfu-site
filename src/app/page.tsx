@@ -1,101 +1,188 @@
 import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
+import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="container px-4 pt-20 md:pt-32">
+        <div className="flex flex-col gap-4 max-w-4xl">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Mohammed Faiyazuddin
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-medium text-foreground/80">
+            General Manager
+          </h2>
+          <p className="text-base md:text-lg text-foreground/60 flex items-center gap-2">
+            <span>Dubai, U.A.E</span>
+            <span className="text-xs">•</span>
+            <span className="text-sm">Scroll Down</span>
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        {/* Hero Image */}
+        <div className="mt-12 md:mt-16 relative w-full aspect-[16/9] max-w-6xl">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/dubaihero.jpg"
+            alt="Dubai Skyline"
+            fill
+            priority
+            className="object-cover rounded-lg"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="container px-4 py-24">
+        <div className="max-w-6xl mx-auto">
+          {/* About Header */}
+          <div className="flex justify-between items-start mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold max-w-[600px] leading-tight">
+              As a MEP contractor, I focus on delivering top-notch and impactful building solutions.
+            </h2>
+            <span className="text-sm text-foreground/60">
+              (About Me)
+            </span>
+          </div>
+
+          <Separator className="mb-16" />
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+            {/* What I do Label */}
+            <div className="flex items-center gap-2 md:col-span-2 mb-4">
+              <span className="text-sm text-foreground/60">(What I do)</span>
+              <svg 
+                width="16" 
+                height="16" 
+                viewBox="0 0 16 16" 
+                fill="none" 
+                className="text-foreground/60"
+              >
+                <path 
+                  d="M8 3L8 13M8 13L13 8M8 13L3 8" 
+                  stroke="currentColor" 
+                  strokeWidth="1.5" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+
+            {/* Service Items */}
+            <div className="space-y-16">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">MEP Design</h3>
+                <p className="text-foreground/60 leading-relaxed">
+                  I create comprehensive MEP designs that engage and inspire your stakeholders. Let me bring your building systems to life with my expertise.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Interaction Design</h3>
+                <p className="text-foreground/60 leading-relaxed">
+                  I specialize in designing intuitive building systems that are both functional and energy-efficient.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-16">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Project Direction</h3>
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                <p className="text-foreground/60 leading-relaxed">
+                  My project direction expertise ensures that your project is on schedule, on budget, and technically sound. Let's discuss how we can bring your vision to life.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">System Integration</h3>
+                <p className="text-foreground/60 leading-relaxed">
+                  From BMS to HVAC systems, I bring your building's infrastructure to life with seamlessly integrated mechanical and electrical systems.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Work Section */}
+      <section className="py-24 overflow-hidden">
+        {/* Scrolling Work Text */}
+        <div className="mb-16">
+          <VelocityScroll 
+            text="Work Work Work" 
+            default_velocity={1}
+            className="text-[clamp(2rem,10vw,10rem)] font-bold leading-none tracking-tight"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+
+        {/* Projects Section */}
+        <section className="container mx-auto px-4 py-12 md:py-24">
+          <div className="grid grid-cols-1 gap-8 mb-12">
+            <div>
+              <h2 className="text-6xl font-bold tracking-tighter md:text-8xl mb-4">Projects Delivered</h2>
+              <p className="text-lg text-muted-foreground md:text-xl max-w-2xl">
+                Explore our portfolio of innovative MEP solutions for various projects.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <Card key={project.id} className="flex flex-col h-full">
+                <CardHeader className="p-0">
+                  <AspectRatio ratio={16 / 9}>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      className="object-cover"
+                      fill
+                    />
+                  </AspectRatio>
+                </CardHeader>
+                <CardContent className="flex-grow p-6">
+                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
+                </CardContent>
+                <CardFooter className="p-6 pt-0">
+                  <Button asChild className="w-full">
+                    <Link href={`/work/${project.id}`}>
+                      <ArrowRightIcon className="mr-2 h-4 w-4" />
+                      View project
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </section>
+      </section>
     </div>
   );
 }
+
+const projects = [
+  {
+    id: 'jalila',
+    title: "Jalila Children's Specialty Hospital",
+    description: "Comprehensive MEP solutions for a leading children's hospital, incorporating cutting-edge medical infrastructure and energy-efficient systems.",
+    image: "/jalila-hospital.jpg",
+  },
+  {
+    id: 'burj-khalifa',
+    title: "Burj Khalifa",
+    description: "State-of-the-art MEP systems for the world's tallest building, ensuring optimal performance and sustainability.",
+    image: "/burj-khalifa.jpg",
+  },
+  {
+    id: 'dubai-mall',
+    title: "The Dubai Mall",
+    description: "Innovative MEP solutions for one of the largest shopping centers, balancing energy efficiency with visitor comfort.",
+    image: "/dubai-mall.jpg",
+  },
+  // Add more projects as needed
+];
