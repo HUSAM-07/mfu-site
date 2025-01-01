@@ -6,6 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import SparklesText from "@/components/ui/sparkles-text";
 
 export default function Home() {
   return (
@@ -13,6 +14,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container px-4 pt-12 md:pt-20 lg:pt-32">
         <div className="flex flex-col gap-4 max-w-4xl">
+          <SparklesText 
+            text="Featured in Construction Week Online's 'Top MEP Contractors' list (2016)"
+            className="text-sm md:text-base lg:text-xl mb-2"
+            colors={{ first: "#4B9CD3", second: "#F59E0B" }}
+            sparklesCount={6}
+          />
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Mohammed Faiyazuddin
           </h1>
@@ -76,24 +83,22 @@ export default function Home() {
       </section>
 
       {/* Featured Projects Section */}
-      <section className="bg-muted py-16 md:py-24">
-        <div className="container px-4">
+      <section className="container px-4 py-16 md:py-24">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-12">Featured Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
-              <Card key={project.id} className="flex flex-col h-full">
-                <CardHeader className="p-0">
-                  <AspectRatio ratio={16 / 9}>
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      className="object-cover rounded-t-lg"
-                      fill
-                    />
-                  </AspectRatio>
-                </CardHeader>
-                <CardContent className="flex-grow p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+              <Card key={project.id} className="overflow-hidden">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
                 </CardContent>
                 <CardFooter className="p-6 pt-0">
